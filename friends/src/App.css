@@ -12,3 +12,19 @@
   text-align: center;
   color: white;
 }
+
+.friend-card button {
+  padding: 5px;
+  margin: 20px 10px;
+  border-radius: 5px;
+}
+
+.edit-button {
+  background: teal;
+  color: white;
+}
+
+.delete-button {
+  background: orangered;
+  color: white;
+}
