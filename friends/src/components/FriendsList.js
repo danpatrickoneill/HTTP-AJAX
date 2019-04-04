@@ -40,6 +40,8 @@ class FriendsList extends React.Component {
     }
   };
 
+  editFriend;
+
   render() {
     return (
       <div className="friends-list">
@@ -50,6 +52,8 @@ class FriendsList extends React.Component {
               <Friend
                 key={friend.id}
                 friend={friend}
+                handleChanges={this.handleChanges}
+                editFriend={this.props.editFriend}
                 deleteFriend={this.props.deleteFriend}
               />
             );

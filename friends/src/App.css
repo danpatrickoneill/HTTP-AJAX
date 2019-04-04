@@ -28,3 +28,7 @@
   background: orangered;
   color: white;
 }
+
+.hidden {
+  display: none;
+}

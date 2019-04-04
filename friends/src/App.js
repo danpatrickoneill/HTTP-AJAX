@@ -41,6 +41,20 @@ class App extends Component {
       });
   };
 
+  editFriend = friend => {
+    axios
+      .put(`http://localhost:5000/friends/${friend.id}`)
+      .then(res => {
+        this.setState({
+          friends: res.data
+        });
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   deleteFriend = friend => {
     axios
       .delete(`http://localhost:5000/friends/${friend.id}`)
@@ -61,6 +75,7 @@ class App extends Component {
         <FriendsList
           friends={this.state.friends}
           addFriend={this.addFriend}
+          editFriend={this.editFriend}
           deleteFriend={this.deleteFriend}
         />
       </div>
