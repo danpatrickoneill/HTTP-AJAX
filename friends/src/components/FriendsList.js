@@ -76,7 +76,7 @@ class FriendsList extends React.Component {
             name="email"
             placeholder="Email address"
           />
-          <button>Add Friend</button>
+          <button className="add-button">Add Friend</button>
         </form>
       </div>
     );

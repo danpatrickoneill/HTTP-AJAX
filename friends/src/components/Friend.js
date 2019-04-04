@@ -87,7 +87,7 @@ class Friend extends React.Component {
               name="email"
               placeholder="Email address"
             />
-            <button>Submit</button>
+            <button className="submit-button">Submit</button>
           </form>
         </div>
       </div>

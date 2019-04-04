@@ -73,6 +73,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Friendster 2.0</h1>
         <FriendsList
           friends={this.state.friends}
           addFriend={this.addFriend}

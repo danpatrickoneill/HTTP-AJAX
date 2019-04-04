@@ -1,22 +1,37 @@
+html {
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
 .friend-card-container {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .friend-card {
   width: 20%;
   background: deepskyblue;
   padding: 2.5%;
-  margin: 2.5%;
+  margin: 1%;
 
   text-align: center;
   color: white;
 }
 
-.friend-card button {
+input {
+  padding: 5px;
+}
+
+button {
   padding: 5px;
   margin: 20px 10px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .edit-button {
@@ -29,6 +44,29 @@
   color: white;
 }
 
+.submit-button {
+  background: white;
+  color: deepskyblue;
+}
+
+.add-button {
+  width: 60px;
+  background: deepskyblue;
+  color: white;
+}
+
 .hidden {
   display: none;
+}
+
+.add-friend-form {
+  margin: 0 auto;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-friend-form input {
+  margin-bottom: 10px;
 }
