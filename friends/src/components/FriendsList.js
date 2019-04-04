@@ -21,12 +21,23 @@ class FriendsList extends React.Component {
 
   addFriend = e => {
     e.preventDefault();
-    const newFriend = {
-      name: this.state.name,
-      age: this.state.age,
-      email: this.state.email
-    };
-    this.props.addFriend(newFriend);
+    if (this.state.name && this.state.age && this.state.email) {
+      const newFriend = {
+        name: this.state.name,
+        age: this.state.age,
+        email: this.state.email
+      };
+      this.props.addFriend(newFriend);
+      // Reset everything here
+      e.target.reset();
+      this.setState({
+        name: "",
+        age: 0,
+        email: ""
+      });
+    } else {
+      alert("Please complete form before submission");
+    }
   };
 
   render() {
