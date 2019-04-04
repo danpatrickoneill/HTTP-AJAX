@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      friends: []
+      friends: [],
+      activeFriend: null
     };
   }
 
@@ -41,9 +42,9 @@ class App extends Component {
       });
   };
 
-  editFriend = friend => {
+  editFriend = (id, friend) => {
     axios
-      .put(`http://localhost:5000/friends/${friend.id}`)
+      .put(`http://localhost:5000/friends/${id}`, friend)
       .then(res => {
         this.setState({
           friends: res.data
@@ -55,9 +56,9 @@ class App extends Component {
       });
   };
 
-  deleteFriend = friend => {
+  deleteFriend = id => {
     axios
-      .delete(`http://localhost:5000/friends/${friend.id}`)
+      .delete(`http://localhost:5000/friends/${id}`)
       .then(res => {
         this.setState({
           friends: res.data

@@ -4,14 +4,37 @@ class Friend extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: false
+      form: false,
+      name: "",
+      age: 0,
+      email: ""
     };
   }
+
+  handleChanges = e => {
+    e.persist();
+    let value = e.target.value;
+    this.setState({
+      [e.target.name]: value
+    });
+  };
 
   toggleForm = () => {
     this.setState(prevState => ({
       form: !prevState.form
     }));
+  };
+
+  editFriend = e => {
+    e.preventDefault();
+    const editedFriend = {
+      name: this.state.name,
+      age: this.state.age,
+      email: this.state.email
+    };
+    this.props.editFriend(this.props.friend.id, editedFriend);
+    e.target.reset();
+    this.toggleForm();
   };
 
   deleteFriend = e => {
@@ -20,7 +43,7 @@ class Friend extends React.Component {
       "Are you sure? This cannot be undone without resetting the server, and I don't feel like doing that"
     );
     if (deleteConfirmation) {
-      this.props.deleteFriend(this.props.friend);
+      this.props.deleteFriend(this.props.friend.id);
     }
   };
 
@@ -41,25 +64,25 @@ class Friend extends React.Component {
             Delete friend
           </button>
           <form
-            onSubmit={this.props.editFriend}
+            onSubmit={this.editFriend}
             className={
               this.state.form ? "edit-friend-form" : "edit-friend-form hidden"
             }
           >
             <input
-              onChange={this.props.handleChanges}
+              onChange={this.handleChanges}
               type="text"
               name="name"
               placeholder="First name"
             />
             <input
-              onChange={this.props.handleChanges}
+              onChange={this.handleChanges}
               type="text"
               name="age"
               placeholder="Age"
             />
             <input
-              onChange={this.props.handleChanges}
+              onChange={this.handleChanges}
               type="text"
               name="email"
               placeholder="Email address"

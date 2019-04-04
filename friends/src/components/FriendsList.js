@@ -40,8 +40,6 @@ class FriendsList extends React.Component {
     }
   };
 
-  editFriend;
-
   render() {
     return (
       <div className="friends-list">
