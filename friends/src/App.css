@@ -1,5 +1,5 @@
 html {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h1 {
@@ -11,6 +11,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: flex-start;
 }
 
 .friend-card {
