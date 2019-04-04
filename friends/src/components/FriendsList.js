@@ -46,7 +46,13 @@ class FriendsList extends React.Component {
         <div className="friend-card-container">
           {this.props.friends.map(friend => {
             console.log(friend);
-            return <Friend key={friend.id} friend={friend} />;
+            return (
+              <Friend
+                key={friend.id}
+                friend={friend}
+                deleteFriend={this.props.deleteFriend}
+              />
+            );
           })}
         </div>
         <form onSubmit={this.addFriend} className="add-friend-form">

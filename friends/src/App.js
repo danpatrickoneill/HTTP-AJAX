@@ -41,10 +41,28 @@ class App extends Component {
       });
   };
 
+  deleteFriend = friend => {
+    axios
+      .delete(`http://localhost:5000/friends/${friend.id}`)
+      .then(res => {
+        this.setState({
+          friends: res.data
+        });
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
     return (
       <div className="App">
-        <FriendsList friends={this.state.friends} addFriend={this.addFriend} />
+        <FriendsList
+          friends={this.state.friends}
+          addFriend={this.addFriend}
+          deleteFriend={this.deleteFriend}
+        />
       </div>
     );
   }
