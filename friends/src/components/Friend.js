@@ -3,7 +3,12 @@ import React from "react";
 const Friend = props => {
   const deleteFriend = e => {
     e.preventDefault();
-    props.deleteFriend(props.friend);
+    const deleteConfirmation = window.confirm(
+      "Are you sure? This cannot be undone without resetting the server, and I don't feel like doing that"
+    );
+    if (deleteConfirmation) {
+      props.deleteFriend(props.friend);
+    }
   };
 
   return (
