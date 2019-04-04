@@ -5,9 +5,9 @@ class Friend extends React.Component {
     super(props);
     this.state = {
       form: false,
-      name: "",
-      age: 0,
-      email: ""
+      name: props.friend.name,
+      age: props.friend.age,
+      email: props.friend.email
     };
   }
 
