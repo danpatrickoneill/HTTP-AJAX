@@ -1,20 +1,17 @@
 import React, { Component } from "react";
+import Friend from "./Friend";
 
 const FriendsList = props => {
   console.log(props);
   return (
     <div className="friends-list">
-      {props.friends.map(friend => {
-        console.log(friend);
-        return (
-          <div key={friend.id} className="friend-card">
-            <p>
-              {friend.name}, {friend.age}
-            </p>
-            <a href={`mailto:${friend.email}`}>{friend.email}</a>
-          </div>
-        );
-      })}
+      <div className="friend-card-container">
+        {props.friends.map(friend => {
+          console.log(friend);
+          return <Friend friend={friend} />;
+        })}
+      </div>
+      <button>Add Friend</button>
     </div>
   );
 };

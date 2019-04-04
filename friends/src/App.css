@@ -1,4 +1,4 @@
-.friends-list {
+.friend-card-container {
   display: flex;
   flex-wrap: wrap;
 }
